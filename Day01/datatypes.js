@@ -1,9 +1,5 @@
 // Create datatypes.js file and use the JavaScript typeof operator to check different data types. 
 // Check the data type of each variables
-let alpha = 'Alpha team';
-let beta = true;
-let gamma = undefined;
-let delta = null;
 console.log('alpha is:', typeof alpha);
 console.log('beta is:', typeof beta);
 console.log('gamma is:', typeof gamma);
@@ -19,11 +15,11 @@ let variable1 = 'values',
     variable4 = 'this variable has a value';
 
 // Declare variables to store your first name, last name, marital status, country and age in multiple lines
-let firstName;
-let lastName;
-let isMarried;
-let country;
-let age;
+// let firstName;
+// let lastName;
+// let isMarried;
+// let country;
+// let age;
 
 // Declare variables to store your first name, last name, marital status, country and age in a single line
 let firstName, lastName, isMarried, country, age;
