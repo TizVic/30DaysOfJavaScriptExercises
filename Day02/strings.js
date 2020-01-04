@@ -79,6 +79,53 @@ console.log(stringToSlice.search('because')); // 31
 // Use trim() to remove if there is trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '.
 console.log('\'' + ' 30 Days Of JavaScript '.trim() + '\'');
 
+// Use startsWith() method with the string 30 Days Of JavaScript make the result true
+console.log(challenge.startsWith('30 '));
+
+// Use endsWith() method with the string 30 Days Of JavaScript make the result true
+console.log(challenge.endsWith('ript'));
+
+// Use match() method to find all the a’s in 30 Days Of JavaScript
+console.log(challenge.match(/a/g)); // ["a", "a", "a"]
+
+// Use match() to count the number all because's in the following sentence:
+// 'You cannot end a sentence with because because because is a conjunction'
+// regex /because/g create an array ['because', 'because', 'because']
+console.log(stringToSlice.match(/because/g).length); // 3
+
+// Use concat() and merge '30 Days of' and 'JavaScript' to a single string, '30 Days Of JavaScript'
+console.log('30 Days of'.concat(' ', 'JavaScript'));
+
+// Use repeat() method to print 30 Days Of JavaScript 2 times
+let repeatN = 2
+console.log(challenge.repeat(repeatN));
+
+// Love is the best thing in this world. Some found their love and some are still looking for their love. 
+// Count the number of word love in this sentence.
+let loveSentence = 'Love is the best thing in this world. Some found their love and some are still looking for their love.';
+console.log(loveSentence.match(/love/gi).length);
+
+// Calculate the total annual income of the person by extract the numbers from the following text. 
+// 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+// \d+ => numbers with repeat. g => globally. match => create an array 
+let text = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+let incomeArray = text.match(/\d+/g);
+let totalIncome = 12 * incomeArray[0] + 1 * incomeArray[1] + 12 * incomeArray[2];
+console.log(totalIncome);
+
+// Clean the following text and find the most frequent word(hint, use replace and regular express).
+const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is also $the $result of &love& of tea&ching';
+let charOnlyRegEx = /[^a-zA-Z\s]/g; // /[@#$-/:-?{-~!"^_`\[\]]/g;
+console.log(sentence.replace(charOnlyRegEx, '')); // word without symbols. TODO: counting
+
+// Using console.log() print out the following statement.
+// The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help to one another.
+const quote = 'The quote \'There is no exercise better for the heart than reaching down and lifting people up.\' by John Holmes teaches us to help to one another.';
+console.log(quote);
+
+// Using console.log() print out the following quote by Mother Teresa.
+const mtQuote = '"Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."';
+console.log(mtQuote);
 
 
 
