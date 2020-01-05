@@ -12,3 +12,7 @@ Exercises for 30 Days of JavaScript Challange
 
 [x] Done
 
+## Day 4
+
+[] On going
+
