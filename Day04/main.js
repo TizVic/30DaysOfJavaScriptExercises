@@ -43,3 +43,29 @@ if (a > b) {
 // ternary operator
 console.log(a > b ? `${a} is greater than ${b}` : 
     a === b ? `${a} and ${b} are equal` : `${b} is greater than ${a}`);
+
+// 4. Write a code which give grade students according to theirs scores:
+//    80-100, A
+//    70-89, B
+//    60-69, C
+//    50-59, D
+//    0 -49, F
+let score = 80;
+let grade;
+switch (true) {
+    case score < 50:
+        grade = 'F';
+        break;
+    case score < 60:
+        grade = 'D';
+        break;
+    case score < 70: 
+        grade = 'C';
+        break;
+    case score < 80:
+        grade = 'B';
+        break;
+    default:
+        grade = 'A'
+}
+console.log('Your grade is:', grade);
