@@ -1,5 +1,5 @@
 let ex1 = false;
-let ex2 = true;
+let ex2 = false;
 // 1. Get user input using prompt(“Enter your age:”). 
 //    If user is 18 or older , give feedback:You are old enough to drive
 //    but if not 18 give feedback to wait for the years he supposed to wait for.
@@ -28,3 +28,18 @@ if (ex2) {
     }
 }
 
+// 3. If a is greater than b return a is greater than b 
+//    else a is less than b. Do it both using if else and ternary operator.
+let a = 3;
+let b= 4;
+// if else method
+if (a > b) {
+    console.log(`${a} is greater than ${b}`);
+} else if (a === b) {
+    console.log(`${a} and ${b} are equal`);
+} else {
+    console.log(`${b} is greater than ${a}`);
+}
+// ternary operator
+console.log(a > b ? `${a} is greater than ${b}` : 
+    a === b ? `${a} and ${b} are equal` : `${b} is greater than ${a}`);
