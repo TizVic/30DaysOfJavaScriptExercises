@@ -14,5 +14,5 @@ Exercises for 30 Days of JavaScript Challange
 
 ## Day 4
 
-[] On going
+[x] Done
 
