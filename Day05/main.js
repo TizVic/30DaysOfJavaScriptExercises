@@ -109,3 +109,32 @@ let words = text.replace(charOnlyRegEx, '').split(' ');
 console.log(words);
 console.log(words.length);
 
+// 26. In the following shopping cart add, remove, edit items
+// - add 'Meat' in the beginning of your shopping cart if if it has not be already added
+// - add sugar at the end of you shopping cart if it has not been already added
+// - Remove 'Honey' if you are allergic to honey
+// - modify tea to 'Green Tea'
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+function isItemPresent(_item) {
+    shoppingCart.filter((item) => {
+        return item === _item;
+    }).length > 0; 
+}
+
+if (!isItemPresent('Meat')) shoppingCart.unshift('Meat');
+console.log('Add meat at the beginning:', shoppingCart);
+if (!isItemPresent('Sugar')) shoppingCart.push('Sugar');
+console.log('add sugar at the end:', shoppingCart);
+let isAllergicToHoney = true;
+let noHoney;
+if (isAllergicToHoney) {
+    // noHoney = shoppingCart.slice(0, shoppingCart.indexOf('Honey')).concat(shoppingCart.slice(shoppingCart.indexOf('Honey')+1));
+    // shoppingCart[shoppingCart.indexOf('Honey')] = null;
+    console.log('Honey removed', shoppingCart.filter((item) => {
+        return item !== 'Honey';
+    })); 
+}
+shoppingCart[shoppingCart.indexOf('Tea')] = 'Green Tea';
+
+
+
