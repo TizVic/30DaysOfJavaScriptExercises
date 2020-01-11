@@ -16,3 +16,10 @@ Exercises for 30 Days of JavaScript Challange
 
 [x] Done
 
+## Day 5
+
+[x] Done
+
+## Day 6
+
+[ ] On going
