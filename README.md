@@ -22,4 +22,8 @@ Exercises for 30 Days of JavaScript Challange
 
 ## Day 6
 
-[ ] On going
+[x] Done
+
+## Day 7
+
+[ ] Done

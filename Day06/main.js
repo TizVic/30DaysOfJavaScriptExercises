@@ -297,9 +297,18 @@ for (techs of fullStack) {
     for (tech of techs) console.log(tech.toUpperCase());
 }
 
-// Copy countries array(Avoid mutation)
+// 32. Copy countries array(Avoid mutation)
+let newCountries = [];
+for (i = 0; i < countries.length; i++) {
+    newCountries.push(countries[i]);
+}
+console.log('countries', countries);
+console.log('newCountries', newCountries);
 
-// Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+// 33. Arrays are mutable. Create a copy of array which does not modify the original.
+//     Sort the copied array and store in a variable sortedCountries
+let sortedCountries = newCountries.sort();
+console.log('sortedCountries', sortedCountries);
 
 // Sort the webTechs array and mernStack array
 
@@ -313,4 +322,10 @@ for (techs of fullStack) {
 
 // Extract all the countries containing two or more words from the countries array and print it as array
 
-// Reverse the countries array and capitalize each country and stored it as an array
+// 40. Reverse the countries array and 
+//     capitalize each country and stored it as an array
+let capitalizedCountries = [];
+for (i = countries.length - 1; i >= 0; i--) {
+    capitalizedCountries.push(countries[i].toUpperCase());
+}
+console.log('capitalizedCountries', capitalizedCountries);
