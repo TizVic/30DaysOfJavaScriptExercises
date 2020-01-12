@@ -186,46 +186,98 @@ const showDateTime = () => {
 }
 showDateTime();
 
-// Declare a function name swapValues. This function swaps value of x to y.
+// L2.05 Declare a function name swapValues. This function swaps value of x to y.
+//          swapValues(3, 4) // x => 4, y=>3
+//          swapValues(4, 5) // x = 5, y = 4
+// TizVic: this is possible only for variable define outside the scope of the function, 
+//         otherwise it is impossible to change parameter values.    
+// let x = 3, y = 4;
+// // const swapValues = (x, y) => {
+// //     let temp = y;
+// //     y = x;
+// //     x = temp;
+// // }
+// const swapValues = (x, y) => {
+//     let temp = y;
+//     y = x;
+//     x = temp;
+// }
+// swapValues(4, 3);
+// console.log(`x=${x}, y=${y}`);
 
-// swapValues(3, 4) // x => 4, y=>3
-// swapValues(4, 5) // x = 5, y = 4
-// Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+// L2.06 Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+//      console.log(reverseArray([1, 2, 3, 4, 5]))
+//      //[5, 4, 3, 2, 1]
+//      console.log(reverseArray(['A', 'B', 'C']))
+//      //['C', 'B', 'A']
+const reverseArray = arr => {
+    if (!Array.isArray(arr)) return `Parameter ${arr} must be an array!`;
+    let revArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        revArr.push(arr[i]);
+    }
+    return revArr;
+}
+console.log(reverseArray([1, 2, 3, 4, 5]));
+console.log(reverseArray(['A', 'B', 'C']));
 
-// console.log(reverseArray([1, 2, 3, 4, 5]))
-// //[5, 4, 3, 2, 1]
-// console.log(reverseArray(['A', 'B', 'C']))
-// //['C', 'B', 'A']
-// Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+// L2.07 Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+// Trivial
 
-// Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+// L2.08 Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+// Trivial
 
-// Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+// l2.09 Declare a function name removeItem. It takes an index parameter and 
+//       it returns an array after removing an item
+let arrayFull = [1,2,3,4,5,6];
+const removeItem = index => {
+    arrayFull.splice(index, 1);
+    return arrayFull;
+}
+console.log(removeItem(3));
 
-// Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
 
-// Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+// L2.10 Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+// Trivial
 
-// Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+// L2.11 Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+// Trivial
 
-// Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+// L2.12 Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+// Trivial
 
+// L2.13 Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 // evensAndOdds(100);
 // The number of odds are 50.
 // The number of evens are 51.
-// Write a function which takes any number of arguments and return the sum of the arguments
+// Trivial
 
+// Write a function which takes any number of arguments and return the sum of the arguments
 // sum(1, 2, 3) // -> 6
 // sum(1, 2, 3, 4) // -> 10
+// Trivial
+
 // Writ a function which generates a randomUserIp.
+// Trivial
 
 // Write a function which generates a randomMacAddress
+// Trivial
 
 // Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
-
 // console.log(randomHexaNumberGenerator());
 // '#ee33df'
-// Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+// Trivial
 
-// console.log(userIdGenerator());
-// 41XTDbE
+// L2.18 Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+//  console.log(userIdGenerator());
+//  41XTDbE
+const charsForIdGeneration = '0123456789ABCDEFGHILMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const userIdGenerator = () => {
+    let id = '';
+    for (let i = 0; i < 7; i++) {
+        let rndIdx = Math.floor(Math.random() * charsForIdGeneration.length);
+        id += charsForIdGeneration[rndIdx];
+    }
+    return id;
+}
+console.log(userIdGenerator());
