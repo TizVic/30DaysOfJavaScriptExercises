@@ -81,12 +81,63 @@ switch (true) {
         break;
 }
 
-// Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+// 14. Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+const checkSeason = month => {
+    let season;
+    switch (month.toLowerCase()) {
+        case 'september':
+        case 'october': 
+        case 'november':
+            season = 'Autumn';
+            break;
+        case 'december': 
+        case 'january': 
+        case 'february':
+            season = 'Winter';
+            break;
+        case 'march': 
+        case 'april': 
+        case 'may':
+            season = 'Spring';
+            break;
+        case 'june': 
+        case 'july':
+        case 'august':
+            season = 'Summer';
+            break;
+    } 
+    return season;
+}
+let month = 'JuNe';
+console.log(month, 'is in', checkSeason(month));
 
-// Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maximum with out using Math.max method.
+// L1.15. Math.max returns its largest argument.
+//     Write a function findMax that takes three arguments and returns their maximum with out using Math.max method.
+const findMax = (num1, num2, num3) => {
+    let max = num1;
+    if (num2 > max) max = num2;
+    if (num3 > max) max = num3;
+    return max;
+}
+console.log('findMax(-1000, -10, -3):', findMax(-1000, -10, -3));
 
-// console.log(findMax(0, 10, 5))
-// 10
-// console.log(findMax(0, -10, -2))
-// 0
-// Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
+// L2.01. Linear equation is calculated as follows: ax + by + c = 0.
+//     Write a function which calculates value of a linear equation, 
+//     solveLinEquation.
+const solveLinEquation = (a, b, c, x) => {
+    if (b !== 0) {
+        return -1 * (a * x + c) / b;
+    } else if (a !== 0) {
+        return `x = ${-1 * c / a}`;
+    } else {
+        return 'It\'s not a linear equation!';
+    }
+}
+
+console.log('a=1, b=2, c=3, x=0', solveLinEquation(1,2,3,0));
+
+// L2.02 Quadratic equation is calculated as follows: ax2 + bx + c = 0. 
+//       Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
+const solveQuadEquation = (a, b, c) => {
+    
+}
