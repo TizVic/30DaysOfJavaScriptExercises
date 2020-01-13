@@ -397,14 +397,30 @@ const factorial = n => {
 }
 console.log('6! =', factorial(6));
 
-// l3.10 Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+// L3.10 Call your function isEmpty, it takes a parameter and it checks if it is empty or not
 const isEmpty = obj => {
-    
+    if (typeof obj !== 'object') return false;
+    if (Array.isArray(obj)) {
+        if (obj.length === 0) return true;
+    }
+    if (Object.getOwnPropertyNames(obj).length === 0) return true;
+    return false;
 }
+console.log('Array', isEmpty([]));
+console.log('Object', isEmpty({a: 1}));
 
-// Call your function sum, it takes any number of arguments and it returns the sum.
+// L3.11 Call your function sum, it takes any number of arguments and it returns the sum.
+const sum = (...args) => {
+    let total = 0;
+    for (let i of args) {
+        total += i;
+    }
+    return total;
+}
+console.log('sum(1,2,3):', sum(1,2,3));
+console.log('sum(1,2,3,4,5,6,7):', sum(1,2,3,4,5,6,7));
 
-// Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+// L3.12 Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
 
 // Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
 
