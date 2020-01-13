@@ -313,7 +313,7 @@ const userIdGeneratedByUser = () => {
         console.log(userIdGeneratorByLength(numberOfChars));
     }
 }
-userIdGeneratedByUser();
+// userIdGeneratedByUser();
 
 // L3.02 Write a function name rgbColorGenerator and it generates rgb colors.
 // rgbColorGenerator()
@@ -370,16 +370,37 @@ const generateColors = (hexOrRgb, numberOfColors) => {
     }
     return arrayOfColors;
 }
-
 console.log(generateColors('hexa', 3)) // ['#a3e12f', '#03ed55', '#eb3d2b']
 // console.log(generateColors('hexa', 1)) // '#b334ef'
 console.log(generateColors('rgb', 3)) // ['rgb(5, 55, 175)', 'rgb(50, 105, 100)', 'rgb(15, 26, 80)']
 // console.log(generateColors('rgb', 1)) // 'rgb(33,79, 176)'
-// Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
 
-// Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+// L3.08 Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+let startArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const shuffleArray = arr => {
+    let shuffledArray = arr;
+    for (let i = 0; i < arr.length; i++) {
+        let rndIdx = Math.floor(Math.random() * arr.length);
+        let temp = shuffledArray[i];
+        shuffledArray[i] = shuffledArray[rndIdx];
+        shuffledArray[rndIdx] = temp;
+    }
+    return shuffledArray;
+}
+console.log(shuffleArray(startArray));
 
-// Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+// L3.09 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+const factorial = n => {
+    if (n % 1 !== 0 || n < 0) return 0;
+    if (n === 0) return 1;
+    return n * factorial(n-1);
+}
+console.log('6! =', factorial(6));
+
+// l3.10 Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+const isEmpty = obj => {
+    
+}
 
 // Call your function sum, it takes any number of arguments and it returns the sum.
 
