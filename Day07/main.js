@@ -420,19 +420,74 @@ const sum = (...args) => {
 console.log('sum(1,2,3):', sum(1,2,3));
 console.log('sum(1,2,3,4,5,6,7):', sum(1,2,3,4,5,6,7));
 
-// L3.12 Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+// L3.12 Write a function called sumOfArrayItems, it takes an array parameter
+//       and return the sum of all the items. Check if all the array items
+//       are number types. If not give return reasonable feedback.
+const sumOfArrayItems = arr => {
+    if (!Array.isArray(arr)) return 'Parameter must be an ARRAY!';
+    let total = 0;
+    for (const item of arr) {
+        if (typeof item !== 'number') {
+            return `All elements of array must be numbers. Element ${item} isn't!`;
+        }
+        total += item;
+    }
+    return total;
+}
+console.log('Total:', sumOfArrayItems([1,2,3,4,5]));
+console.log('Total:', sumOfArrayItems([1,2,3,'0A', 5]));
 
-// Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+// L3.13 Write a function called average, it takes an array parameter and returns
+//       the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+const average = arr => {
+    if (!Array.isArray(arr)) return 'Parameter must be an ARRAY!';
+    let total = 0;
+    for (const item of arr) {
+        if (typeof item !== 'number') {
+            return `All elements of array must be numbers. Element ${item} isn't!`;
+        }
+        total += item;
+    }
+    return total/arr.length;
+}
+console.log('Average:', average([1,2,3,4,5]));
+console.log('Average:', average([1,2,3,'0A', 5]));
 
-// Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+// L3.14 Write a function called modifyArray takes array as parameter and
+//       modifies the fifth item of the array and return the array.
+//       If the array length is less than five it return 'item not found'.
+const modifyArray = arr => {
+    if (!Array.isArray(arr)) return 'Parameter must be an ARRAY!';
+    if (arr.length < 5) return 'Item not found.';
+    arr[4] = arr[4].toUpperCase();
+    return arr;
+}
+console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']));
+console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon','Microsoft',  'IBM']));
+console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon']));
 
-// console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']);
-// ['Avocado', 'Tomato', 'Potato','Mango', 'LEMON', 'Carrot']
-// console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon','Microsoft',  'IBM']);
-// ['Google', 'Facebook','Apple', 'Amazon','MICROSOFT',  'IBM']
-// console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon']);
-//   'Not Found'
-// Write a function called isPrime, which checks if a number is prime number.
+// L3.15 Write a function called isPrime, which checks if a number is prime number.
+const isPrime = n => {
+    if (n === 1) return true;
+    let primes = [2];
+    let myPrime = false;
+    for (i = 0; i <= n; i++) {
+        if (i > 2) {
+            myPrime = true;
+            for (const prime of primes) {
+                if (i % prime === 0) {
+                    myPrime = false;
+                    break;
+                } 
+            }
+            if (myPrime) primes.push(i);
+        }
+    }
+    return myPrime;
+}
+console.log('1 is prime:', isPrime(1));
+console.log('53 is prime:', isPrime(53));
+console.log('5141 is prime:', isPrime(5141));
 
 // Write a functions which checks if all items are unique in the array.
 
