@@ -489,14 +489,19 @@ console.log('1 is prime:', isPrime(1));
 console.log('53 is prime:', isPrime(53));
 console.log('5141 is prime:', isPrime(5141));
 
-// Write a functions which checks if all items are unique in the array.
+// L3.16 Write a functions which checks if all items are unique in the array.
+// very simple. Order array and check two nearer elements 
 
-// Write a function which checks if all the items of the array are the same data type.
+// L3.17 Write a function which checks if all the items of the array are the same data type.
+// very simple: save the first data type then check every other to this type. If different then false
 
-// JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+// L3.18 JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+// Regex is the king
 
-// Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
-
+// L3.19 Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+// trivial
 // sevenRandomNumbers()
 // [(1, 4, 5, 7, 9, 8, 0)]
-// Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
+
+// L3.20 Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
+// Very trivial :)

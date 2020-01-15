@@ -26,4 +26,8 @@ Exercises for 30 Days of JavaScript Challange
 
 ## Day 7
 
-[ ] Done
+[ x ] Done
+
+## Day 8
+
+[] Done
