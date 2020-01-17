@@ -94,9 +94,27 @@ for (const name of userNames) {
 }
 console.log(maxSkill);
 
-// Count logged in users,count users having greater than equal to 50 points from the following object.
+// L2.02 Count logged in users,count users having greater than equal to 50 points from the following object.
+let usersData = {totalLoggedin: 0, verySkilled: 0};
+userNames = Object.keys(users);
+for (const name of userNames) {
+    let user = users[name];
+    if (user.isLoggedIn === true) usersData.totalLoggedin++;
+    if (user.points >= 50) usersData.verySkilled++;
+}
+console.log(`LoggedIn ${usersData.totalLoggedin}, Veryskilled ${usersData.verySkilled}`);
 
-// Find people who are MERN stack developer from the users object
+// L2.03 Find people who are MERN stack developer from the users object
+let userMERN = [];
+userNames = Object.keys(users);
+for (const name of userNames) {
+    let user = users[name];
+    if ((user.skills.includes('Node') || user.skills.includes('Node.js')) &&
+    user.skills.includes('Express') && user.skills.includes('MongoDB') &&
+    user.skills.includes('React')) {
+        console.log(name);
+    }
+}
 
 // Set your name in the users object without modifying the original users object
 
