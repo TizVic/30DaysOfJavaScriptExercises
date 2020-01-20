@@ -137,9 +137,9 @@ let usersValues = Object.values(users);
 console.log(usersValues);
 
 // L2.07 Use the countries object to print a country name, capital, populations and languages.
-for (let country of countries) {
-    console.log(`${country.name}\t${country.capital}\t${country.population}\t${country.languages}`);
-}
+// for (let country of countries) {
+//     console.log(`${country.name}\t${country.capital}\t${country.population}\t${country.languages}`);
+// }
 
 /**
  * Exercises: Level 3
@@ -155,8 +155,8 @@ let personAccount = {
   totalIncome: function() {},
   totalExpense: function() {},
   accountInfo: function() {},
-  addIncome: (income) => {this.incomes.push(income);},
-  addExpense: (expense) => {this.expenses.push(expense);},
+  addIncome: (income) => {personAccount.incomes.push(income);},
+  addExpense: (expense) => {personAccount.expenses.push(expense);},
   accountBalance: () => {}
 }
 console.log(personAccount.addExpense([10, 'pizzas']));
@@ -238,23 +238,33 @@ const products = [
 //       a. Create a function called signUp which allows user to add to the collection.
 //          If user exists, inform the user that he has already an account. 
 //       b. Create a function called signIn which allows user to sign in to the application 
-
-const signUp = (userName, userEmail, userPassword) {
-    let userSigned = Object.values(users1.username);
-    if (userSigned.includes(userName)) {
-      return `${userName} already exists!`;
-    } else {
-      users1.push({
-        _id: 'zzzxxx',
-        username: userName,
-        email: userEmail,
-        password: userPassword,
-        createdAt: new Date(),
-        isLoggedIn: false
-      });
+const charsForIdGeneration = '0123456789abcdefghijklmnopqrstuvwxyz';
+const idGenerator = () => {
+    let id = '';
+    for (let i = 0; i < 6; i++) {
+        let rndIdx = Math.floor(Math.random() * charsForIdGeneration.length);
+        id += charsForIdGeneration[rndIdx];
     }
+    return id;
+}
+const signUp = (userName, userEmail, userPassword) => {
+    for (let i = 0; i < users1.length; i++) {
+      if (users1[i].username.includes(userName)) {
+        return `${userName} already exists!`;
+      }      
+    }
+    users1.push({
+      _id: idGenerator(),
+      username: userName,
+      email: userEmail,
+      password: userPassword,
+      createdAt: new Date(),
+      isLoggedIn: false
+    });
     return 'OK';
 }
+
+console.log(signUp('TizVic', 'tizvic@gmail.com', 'abcdefg'));
 
 // L3.03 The products array has three elements and each of them has six properties. 
 //       a. Create a function called rateProduct which rates the product 
