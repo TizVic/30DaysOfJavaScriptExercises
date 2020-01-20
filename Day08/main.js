@@ -239,6 +239,23 @@ const products = [
 //          If user exists, inform the user that he has already an account. 
 //       b. Create a function called signIn which allows user to sign in to the application 
 
+const signUp = (userName, userEmail, userPassword) {
+    let userSigned = Object.values(users1.username);
+    if (userSigned.includes(userName)) {
+      return `${userName} already exists!`;
+    } else {
+      users1.push({
+        _id: 'zzzxxx',
+        username: userName,
+        email: userEmail,
+        password: userPassword,
+        createdAt: new Date(),
+        isLoggedIn: false
+      });
+    }
+    return 'OK';
+}
+
 // L3.03 The products array has three elements and each of them has six properties. 
 //       a. Create a function called rateProduct which rates the product 
 //       b. Create a function called averageRating which calculate the average rating of a product
