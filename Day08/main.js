@@ -264,7 +264,20 @@ const signUp = (userName, userEmail, userPassword) => {
     return 'OK';
 }
 
-console.log(signUp('TizVic', 'tizvic@gmail.com', 'abcdefg'));
+
+const signIn = (userName, userPassword) => {
+  for (let i = 0; i < users1.length; i++) {
+    if (users1[i].username.includes(userName)) {
+      if (userPassword === users1[i].password) {
+        users1[i].isLoggedIn = true;
+        return users1[i];
+      }
+    }      
+  }
+  return {};
+}
+// console.log(signUp('TizVic', 'tizvic@gmail.com', 'abcdefg'));
+console.log(signIn('Thomas', '123333'));
 
 // L3.03 The products array has three elements and each of them has six properties. 
 //       a. Create a function called rateProduct which rates the product 
