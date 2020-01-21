@@ -247,6 +247,7 @@ const idGenerator = () => {
     }
     return id;
 }
+// a.
 const signUp = (userName, userEmail, userPassword) => {
     for (let i = 0; i < users1.length; i++) {
       if (users1[i].username.includes(userName)) {
@@ -264,7 +265,7 @@ const signUp = (userName, userEmail, userPassword) => {
     return 'OK';
 }
 
-
+// b.
 const signIn = (userName, userPassword) => {
   for (let i = 0; i < users1.length; i++) {
     if (users1[i].username.includes(userName)) {
@@ -282,6 +283,37 @@ console.log(signIn('Thomas', '123333'));
 // L3.03 The products array has three elements and each of them has six properties. 
 //       a. Create a function called rateProduct which rates the product 
 //       b. Create a function called averageRating which calculate the average rating of a product
+const rateProduct = (idProduct, userName, ratePoints) => {
+  
+  const convertToArray = (arr, field) => {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      newArr.push(arr[i][field]);
+    }
+    return newArr;
+  }
+
+  const getUserIdByUsername = (userName) => {
+    for (let i = 0; i < users1.length; i++) {
+      if (users1[i].username.includes(userName)) {
+          return users1[i]._id;
+      }      
+    }
+    return null;
+  }
+
+  // let ratingsArray = convertToArray(products, 'ratings');
+  let productsArray = convertToArray(products, 'name');
+  if (!productsArray.includes(idProduct)) {
+    return `${idProduct} doesn\'t exists`;
+  } 
+  const productToRateindex = productsArray.indexOf(idProduct);
+  const productToRate = products[productToRateindex];
+  productToRate.ratings.push({userId: getUserIdByUsername(userName), rate: ratePoints});
+} 
+
+rateProduct('Laptop', 'Thomas', 10);
+
 
 // L3.04 Create a function called likeProduct. This function will helps to like to the product if it is not liked 
 //       and remove like if it was liked.
