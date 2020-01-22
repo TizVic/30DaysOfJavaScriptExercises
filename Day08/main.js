@@ -283,26 +283,23 @@ console.log(signIn('Thomas', '123333'));
 // L3.03 The products array has three elements and each of them has six properties. 
 //       a. Create a function called rateProduct which rates the product 
 //       b. Create a function called averageRating which calculate the average rating of a product
+const convertToArray = (arr, field) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i][field]);
+  }
+  return newArr;
+}
+
+const getUserIdByUsername = (userName) => {
+  for (let i = 0; i < users1.length; i++) {
+    if (users1[i].username.includes(userName)) {
+        return users1[i]._id;
+    }      
+  }
+  return null;
+}
 const rateProduct = (idProduct, userName, ratePoints) => {
-  
-  const convertToArray = (arr, field) => {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-      newArr.push(arr[i][field]);
-    }
-    return newArr;
-  }
-
-  const getUserIdByUsername = (userName) => {
-    for (let i = 0; i < users1.length; i++) {
-      if (users1[i].username.includes(userName)) {
-          return users1[i]._id;
-      }      
-    }
-    return null;
-  }
-
-  // let ratingsArray = convertToArray(products, 'ratings');
   let productsArray = convertToArray(products, 'name');
   if (!productsArray.includes(idProduct)) {
     return `${idProduct} doesn\'t exists`;
@@ -315,5 +312,25 @@ const rateProduct = (idProduct, userName, ratePoints) => {
 rateProduct('Laptop', 'Thomas', 10);
 
 
-// L3.04 Create a function called likeProduct. This function will helps to like to the product if it is not liked 
-//       and remove like if it was liked.
+// L3.04 Create a function called likeProduct. This function will helps to like to the product
+//       if it is not liked and remove like if it was liked.
+const likeProduct = (idProduct, userName) => {
+  let productsArray = convertToArray(products, 'name');
+  if (!productsArray.includes(idProduct)) {
+    return `${idProduct} doesn\'t exists`;
+  } 
+  const productToLikeIndex = productsArray.indexOf(idProduct);
+  const productToLike = products[productToLikeIndex];
+  let likesArray = productToLike.likes;
+  let idUser = getUserIdByUsername(userName);
+  if (likesArray.includes(idUser)) {
+    let userIndex = likesArray.indexOf(idUser);
+    // remove like only
+    products[productToLikeIndex].likes.splice(userIndex, 1);
+  } else {
+    products[productToLikeIndex].likes.push(idUser);
+  }
+  return products[productToLikeIndex];
+}
+console.log(likeProduct('Laptop', 'Thomas'));
+console.log(likeProduct('Laptop', 'Asab'));
