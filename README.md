@@ -38,6 +38,8 @@ Exercises for 30 Days of JavaScript Challange
 
 ## Day 10
 
-[] Done
+[x] Done with some TODOs
 
+## Day 11
 
+[] Done with some TODOs
