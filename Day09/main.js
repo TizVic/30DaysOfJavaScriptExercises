@@ -82,9 +82,56 @@ console.log(countries.reduce((prev, act) => prev  + ', ' + act), 'are north Euro
 // L1.20 Use some to check if some names' length greater than seven in names array
 console.log(names.some(n =>{ return (n.length > 7);}));
 
-// Use every to check if all the countries contain the word land
-// Explain the difference between find and findIndex.
-// Use find to find the first country containing only six letters in the countries array
-// Use findIndex to find the position of the first country containing only six letters in the countries array
-// Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
-// Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+// L1.21 Use every to check if all the countries contain the word land
+console.log(countries.every(country => country.includes('land')));
+
+// L1.22 Explain the difference between find and findIndex.
+// Trivial
+
+// L1.23 Use find to find the first country containing only six letters in the countries array
+console.log(countries.find(country => country.length === 6));
+
+// L1.24 Use findIndex to find the position of the first country containing only six letters in the countries array
+console.log(countries.findIndex(country => country.length === 6));
+
+// L1.25 Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+console.log(countries.findIndex(country => country === 'Norway'));
+
+// L1.26 Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+console.log(countries.findIndex(country => country === 'Russia'));
+
+/**
+ * Level 2
+ */
+
+// L2.01 Find the total price of products by chaining two or more array iterators
+//       (eg. arr.map(callback).filter(callback).reduce(callback))
+console.log(products.map(product => product.price).filter(price => typeof price === 'number').reduce((acc, curr) => acc + curr));
+
+// L2.02 Find the sum of price of products using only reduce reduce(callback))
+// TODO (better)
+let productPriceTotal = products[0].price;
+products.reduce((a, p, i) => {typeof p.price === 'number' ? productPriceTotal += products[i].price : productPriceTotal});
+console.log(productPriceTotal);
+
+// L2.03 Declare a function called categorizeCountries which returns an array of countries
+//       which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+// Use filter and passa parameter as criteria
+
+// L2.04 Create a function which return an array of objects, which is the letter and 
+//       the number of times the letter use to start with a name of a country.
+// TODO
+
+// L2.05 Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+// TODO
+
+// L2.06 Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+// TODO
+
+// L2.07 Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+// TODO
+
+/**
+ * Level 3
+ */
+// TODO
