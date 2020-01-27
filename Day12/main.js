@@ -55,5 +55,36 @@ const tenMostFrequentWords = (text, topX = Infinity) => {
 console.log(tenMostFrequentWords(paragraph));
 console.log(tenMostFrequentWords(paragraph, 10));
 
+/**
+ * Level 3
+ */
 
+// L3.01 Write a function which cleans text. Clean the following text. 
+//       After cleaning, count three most frequent words in the string.
+const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'
+const cleanText = text => {
+    let pattern = /[^A-Za-z ]/g;
+    let cleanedText = text.replace(pattern, '');
+    return cleanedText;
+}
+console.log(cleanText(sentence));
 
+// L3.02 Write a function which find the most frequent words. 
+//       After cleaning, count three most frequent words in the string.
+const mostFrequentWords = (text, topX = 3) => {
+    let pattern = /\w+/g;
+    let arrayOfWords = cleanText(text).match(pattern);
+    let vocabolary = new Map();
+    for (let i = 0; i < arrayOfWords.length; i++) {
+        let word = arrayOfWords[i];
+        if (!vocabolary.has(word)) {
+            vocabolary.set(word, 1);
+        } else {
+            let value = vocabolary.get(word) + 1;
+            vocabolary.set(word, value);
+        }
+    }
+    let sorted = [...vocabolary.entries()].sort((a, b) => b[1] - a[1]);
+    return sorted.slice(0, topX);
+}
+console.log(mostFrequentWords(sentence));
