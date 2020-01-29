@@ -47,3 +47,15 @@ Exercises for 30 Days of JavaScript Challange
 ## Day 12
 
 [x] Done
+
+## Day 13
+
+   [x] Skipped (trivial)
+
+## Day 14
+
+ [x] Skipped (not so trivial)
+
+## Day 15
+
+[] Done
