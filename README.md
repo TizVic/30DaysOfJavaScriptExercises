@@ -34,11 +34,11 @@ Exercises for 30 Days of JavaScript Challange
 
 ## Day 9
 
-[x] Done with some TODOs
+[x] Done (with some TODOs)
 
 ## Day 10
 
-[x] Done with some TODOs
+[x] Done (with some TODOs)
 
 ## Day 11
 
@@ -50,12 +50,12 @@ Exercises for 30 Days of JavaScript Challange
 
 ## Day 13
 
-   [x] Skipped (trivial)
+[x] Skipped (trivial)
 
 ## Day 14
 
- [x] Skipped (not so trivial)
+[x] Skipped (not so trivial)
 
 ## Day 15
 
-[] Done
+[x] Done (with some TODOs)
