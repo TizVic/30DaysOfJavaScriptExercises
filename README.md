@@ -63,3 +63,7 @@ Exercises for 30 Days of JavaScript Challange
 ## Day 16
 
 [x] Done
+
+## Day 17
+
+[x] Done
