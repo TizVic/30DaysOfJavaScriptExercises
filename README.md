@@ -59,3 +59,7 @@ Exercises for 30 Days of JavaScript Challange
 ## Day 15
 
 [x] Done (with some TODOs)
+
+## Day 16
+
+[x] Done
