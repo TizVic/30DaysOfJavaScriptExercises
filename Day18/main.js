@@ -49,5 +49,29 @@ console.log('Cat\'s name', JSON.stringify(catNames));
 /** 
  * Exercises: Level 3
  */
+// L3.01 Read the cats api and find the average weight of cat in metric unit.
+const parseCatWeightAndCalculateAvg = range => {
+    let trimmedRange = range.trim();
+    let [min, max] = trimmedRange.split('-');
+    let min = Number(min.trim());
+    let max = Number(max.trim());
+    return (max - min)/2.0;
+}
 
+const readCatWeights = async url => {
+    try {
+        const response = await fetch(url);
+        const cats = await response.json();
+        let result = [];
+        for (const cat of cats) {
+            result.push(parseCatWeightAndCalculateAvg(cat.weight.metric));  
+        }
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+}
+// L3.02 Read the countries api and find out the 10 largest countries
+
+// L3.03 Read the countries api and count total number of languages in the world used as officials.
  
