@@ -44,7 +44,7 @@ const readCatNames = async url => {
 const catNames = readCatNames(catsAPI)
                     .then(data => data)
                     .catch(error => console.log(error));
-console.log('Cat\'s name', JSON.stringify(catNames));
+console.log('Cat\'s name', catNames);
 
 /** 
  * Exercises: Level 3
@@ -53,9 +53,9 @@ console.log('Cat\'s name', JSON.stringify(catNames));
 const parseCatWeightAndCalculateAvg = range => {
     let trimmedRange = range.trim();
     let [min, max] = trimmedRange.split('-');
-    let min = Number(min.trim());
-    let max = Number(max.trim());
-    return (max - min)/2.0;
+    min = Number(min.trim());
+    max = Number(max.trim());
+    return (max + min)/2.0;
 }
 
 const readCatWeights = async url => {
@@ -64,13 +64,21 @@ const readCatWeights = async url => {
         const cats = await response.json();
         let result = [];
         for (const cat of cats) {
-            result.push(parseCatWeightAndCalculateAvg(cat.weight.metric));  
+            result.push({
+                name: cat.name,
+                avgWeigth: parseCatWeightAndCalculateAvg(cat.weight.metric)});  
         }
         return result;
     } catch (error) {
         console.log(error);
     }
+    return result;
 }
+const catWeigths = readCatWeights(catsAPI)
+                        .then(data => data)
+                        .catch(error => console.log('ERROR', error));
+console.log('Cat Wigths:', catWeigths);
+
 // L3.02 Read the countries api and find out the 10 largest countries
 
 // L3.03 Read the countries api and count total number of languages in the world used as officials.
