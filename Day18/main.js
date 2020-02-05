@@ -80,6 +80,37 @@ const catWeigths = readCatWeights(catsAPI)
 console.log('Cat Wigths:', catWeigths);
 
 // L3.02 Read the countries api and find out the 10 largest countries
+const readCountriesSize = async url => {
+    try {
+        const response = await fetch(url);
+        const countries = await response.json();
+        const countriesArea = [];
+        const tenLargest = [{name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0},
+                            {name:'', area: 0}];
+        for (const country of countries) {
+            countriesArea.push(
+                {name: country.name,
+                 area: Number(country.area)});
+        }
+        for (const ca of countriesArea) {
+            let area = ca.area;
+            // evaluate area versus tenLargest areas
+        }
+    } catch (err) {
+        console.log(err); 
+    }
+}
+
+readCountries(countriesAPI);
+
 
 // L3.03 Read the countries api and count total number of languages in the world used as officials.
  
